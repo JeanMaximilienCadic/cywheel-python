@@ -3,7 +3,7 @@ import os
 from gnutools.utils import parent, listfiles
 import numpy as np
 import pathlib
-from redison import __version__
+
 
 # The directory containing this file
 HERE = pathlib.Path(__file__).parent
@@ -43,18 +43,18 @@ def get_packages(root):
 
 setuptools.setup(
     name="cywheel",
-    version=__version__,
+    version="1.0a4",
     author="Jean Maximilien Cadic",
     author_email="j.cadic@9dw-lab.com",
     description="Easy packaging for cython wheels.",
     long_description=README,
     long_description_content_type="text/markdown",
     url="https://github.com/JeanMaximilienCadic/cywheel-python",
-    python_requires='>=3',
+    python_requires='>=3.5',
     install_requires=get_requirements("requirements.txt"),
     packages=["cywheel"],
     classifiers=[
-        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.5",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],

@@ -1,0 +1,11 @@
+README.md
+setup.py
+cywheel/__init__.py
+cywheel/compile.py
+cywheel/copy_init.py
+cywheel/cymake.py
+cywheel.egg-info/PKG-INFO
+cywheel.egg-info/SOURCES.txt
+cywheel.egg-info/dependency_links.txt
+cywheel.egg-info/requires.txt
+cywheel.egg-info/top_level.txt
