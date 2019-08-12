@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/JeanMaximilienCadic/cython-python/master/img/cython.png"/>
+  <img src="https://raw.githubusercontent.com/JeanMaximilienCadic/cywheel-python/master/img/cython.png"/>
 </p>
 
 # Redison : Redis + Json : Shared objects in memory using redis and json files
