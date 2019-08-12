@@ -7,6 +7,7 @@
 ## Requirements
 ```bash
 pip install -r requirements.txt
+pip install cywheel-python
 ```
 ## Getting Started
 
