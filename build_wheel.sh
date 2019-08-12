@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 #Variables
-VERSION="1.0a4"
+VERSION="1.0a5"
 WHL_NAME="cywheel-$VERSION-py3-none-any.whl";
 WHL_NAME_NEW="cywheel-$VERSION-py36-none-any.whl";
 

@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: cywheel
-Version: 1.0a4
+Version: 1.0a5
 Summary: Easy packaging for cython wheels.
 Home-page: https://github.com/JeanMaximilienCadic/cywheel-python
 Author: Jean Maximilien Cadic

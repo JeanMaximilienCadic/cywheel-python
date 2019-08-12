@@ -43,7 +43,7 @@ def get_packages(root):
 
 setuptools.setup(
     name="cywheel",
-    version="1.0a4",
+    version="1.0a5",
     author="Jean Maximilien Cadic",
     author_email="j.cadic@9dw-lab.com",
     description="Easy packaging for cython wheels.",

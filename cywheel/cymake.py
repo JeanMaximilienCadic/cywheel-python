@@ -8,6 +8,7 @@ class CyMake:
         self.lib_name = name(root)
         self.curdir = parent(os.path.realpath(__file__))
         self.version=version
+        self.exe = os.path.sys.executable
         os.environ["VERSION"] = self.version
         self.clean()
 
@@ -40,23 +41,26 @@ class CyMake:
 
 
         compile ="{curdir}/compile.py".format(curdir=self.curdir)
-        os.system("python {compile} build_ext --build-lib {PACKAGE_VERSION}".format(compile=compile,
-                                                                                    PACKAGE_VERSION=os.environ["PACKAGE_VERSION"]))
+        os.system("{exe} {compile} build_ext --build-lib {PACKAGE_VERSION}".format(exe=self.exe,
+                                                                                   compile=compile,
+                                                                                   PACKAGE_VERSION=os.environ["PACKAGE_VERSION"]))
         os.system("mv {PACKAGE_VERSION}/{PACKAGE}/iyo {PACKAGE_VERSION}".format(PACKAGE_VERSION=os.environ["PACKAGE_VERSION"],
                                                                                 PACKAGE=os.environ["PACKAGE"]))
         os.system("rm -r {PACKAGE_VERSION}/{PACKAGE}".format(PACKAGE_VERSION=os.environ["PACKAGE_VERSION"],
                                                              PACKAGE=os.environ["PACKAGE"]))
 
     def _build_wheel(self):
-        os.system("python {setup} bdist_wheel --python-tag py35".format(setup=self.setup))
+        os.system("{exe} {setup} bdist_wheel --python-tag py35".format(exe=self.exe,
+                                                                       setup=self.setup))
         os.system("mv dist/*.whl {WHL_NAME_NEW}".format(WHL_NAME_NEW=os.environ["WHL_NAME_NEW"]))
         os.system("rm -r dist")
 
     def _copy_init(self):
         copy_init ="{curdir}/copy_init.py".format(curdir=self.curdir)
-        os.system("python {copy_init} {PACKAGE} {PACKAGE_VERSION}".format(copy_init=copy_init,
-                                                                                    PACKAGE=os.environ["PACKAGE"],
-                                                                                    PACKAGE_VERSION=os.environ["PACKAGE_VERSION"]))
+        os.system("{exe} {copy_init} {PACKAGE} {PACKAGE_VERSION}".format(exe=self.exe,
+                                                                         copy_init=copy_init,
+                                                                         PACKAGE=os.environ["PACKAGE"],
+                                                                         PACKAGE_VERSION=os.environ["PACKAGE_VERSION"]))
     def _clean_wheel(self):
         os.system("zip --delete {WHL_NAME_NEW} '{PACKAGE}/*'".format(PACKAGE=os.environ["PACKAGE"],
                                                                      WHL_NAME_NEW=os.environ["WHL_NAME_NEW"]))
