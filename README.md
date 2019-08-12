@@ -4,6 +4,10 @@
 
 # Cython packaging for python wheels
 
+## Requirements
+```bash
+pip install -r requirements.txt
+```
 ## Getting Started
 
 
