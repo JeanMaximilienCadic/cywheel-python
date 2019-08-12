@@ -2,7 +2,7 @@
   <img src="https://raw.githubusercontent.com/JeanMaximilienCadic/cywheel-python/master/img/cython.png"/>
 </p>
 
-# Redison : Redis + Json : Shared objects in memory using redis and json files
+# Cython packaging for python wheels
 
 ## Getting Started
 
